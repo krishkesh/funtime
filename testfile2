@@ -1,0 +1,12 @@
+---
+- name: Loop  demo playbook
+  hosts: "*"
+
+  tasks:
+
+  - name: Creating multiple users
+    user: name={{ item }}  group=adm shell=/bin/bash state=present
+    with_items:
+      - shabaz
+      - arunk
+...
